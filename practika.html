@@ -139,6 +139,135 @@
     position: relative;
     z-index: 1;
 }
+/* ========== АДАПТАЦИЯ ПОД ТЕЛЕФОН ========== */
+
+@media (max-width: 768px) {
+    /* Заголовки меньше */
+    .main-page h1,
+    .page h1 {
+        font-size: 24px !important;
+        padding: 8px 15px !important;
+    }
+
+    .main-page h2,
+    .page h2 {
+        font-size: 14px !important;
+        padding: 6px 15px !important;
+    }
+
+    /* Кнопки в одну колонку */
+    .bottom-buttons {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .bottom-buttons button {
+        width: 100% !important;
+        max-width: 280px !important;
+        font-size: 14px !important;
+        padding: 12px 20px !important;
+    }
+
+    /* Две колонки становятся в столбик */
+    .container {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 20px !important;
+    }
+
+    .menu {
+        width: 100% !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .menu button {
+        flex: 1 1 auto !important;
+        min-width: 120px !important;
+        text-align: center !important;
+        padding: 10px 15px !important;
+        font-size: 13px !important;
+    }
+
+    .content {
+        min-height: 200px !important;
+        padding: 20px !important;
+    }
+
+    .content h3 {
+        font-size: 22px !important;
+    }
+
+    .content p {
+        font-size: 14px !important;
+    }
+
+    /* Отступы */
+    .page,
+    .main-page {
+        padding: 20px 15px !important;
+    }
+
+    .header h1 {
+        font-size: 28px !important;
+    }
+
+    .header h2 {
+        font-size: 14px !important;
+    }
+
+    /* Кнопка Назад */
+    .back-button a {
+        font-size: 12px !important;
+        padding: 8px 20px !important;
+    }
+
+    /* Разделитель */
+    .divider {
+        width: 80% !important;
+        margin: 20px auto !important;
+    }
+
+    /* Контакты */
+    .contacts .phone {
+        font-size: 16px !important;
+    }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .main-page h1,
+    .page h1 {
+        font-size: 20px !important;
+    }
+
+    .menu button {
+        min-width: 100px !important;
+        font-size: 12px !important;
+        padding: 8px 12px !important;
+    }
+
+    .content {
+        padding: 15px !important;
+        min-height: 150px !important;
+    }
+
+    .content h3 {
+        font-size: 18px !important;
+    }
+
+    .content p {
+        font-size: 13px !important;
+    }
+
+    .page,
+    .main-page {
+        padding: 15px 10px !important;
+    }
+}
     </style>
 
 </head>
