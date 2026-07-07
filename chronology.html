@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хронология - Архив нефтегаза</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', CenturyGothic, sans-serif;
+            background-color: #1c0303;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page {
+            background-color: #1c0303;
+            background-image: url('photo_2026-07-06_22-32-18.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 40px;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .page > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 8px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+            align-items: flex-start;
+        }
+
+        .menu {
+            width: 220px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu button {
+            padding: 14px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+            padding-left: 25px;
+        }
+
+        .menu button:hover {
+            background-color: #d2b48c;
+            color: #1c0303;
+            border-color: #000000;
+            transform: scale(1.03);
+        }
+
+        .content {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            min-height: 300px;
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #d2b48c;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #e0e8f0;
+        }
+
+        .content .highlight {
+            color: #d2b48c;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-button a:hover {
+            background-color: #d2b48c;
+            color: #1c0303;
+            border-color: #000000;
+            transform: scale(1.05);
+        }
+
+        .page {
+            animation: fadeInScale 0.8s ease;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+                background-color: transparent;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                background-color: #1a3a5c;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="header">
+            <h1>ХРОНОЛОГИЯ</h1>
+            <h2>История развития нефтегазовой отрасли по эпохам</h2>
+        </div>
+
+        <div class="container">
+
+            <div class="menu">
+                <button onclick="showInfo('origin')">ЗАРОЖДЕНИЕ</button>
+                <button onclick="showInfo('industrialization')">ИНДУСТРИАЛИЗАЦИЯ</button>
+                <button onclick="showInfo('breakthrough')">БОЛЬШОЙ РЫВОК</button>
+                <button onclick="showInfo('transformation')">ТРАНСФОРМАЦИЯ</button>
+                <button onclick="showInfo('modernity')">СОВРЕМЕННОСТЬ</button>
+            </div>
+
+            <div class="content" id="infoBlock">
+                <h3>ЭНЕРГЕТИЧЕСКОЕ НАСЛЕДИЕ РОССИИ</h3>
+                <p>Выберите эпоху из меню слева, чтобы узнать подробности.</p>
+                <p style="color: #8899aa; font-style: italic; margin-top: 15px;">Здесь будет информация по выбранной эпохе</p>
+            </div>
+
+        </div>
+
+        <div class="back-button">
+            <a href="practika.html">← НАЗАД НА ГЛАВНУЮ</a>
+        </div>
+
+    </div>
+
+    <script>
+        function showInfo(topic) {
+            var block = document.getElementById('infoBlock');
+
+            if (topic === 'origin') {
+                block.innerHTML = `
+                    <h3>ЗАРОЖДЕНИЕ</h3>
+                    <p><span class="highlight">XVIII – XIX век</span></p>
+                    <p>Первые упоминания о нефти в России относятся к XVIII веку.</p>
+                    <p><span class="highlight">1864 год</span> — на Кубани пробурена первая нефтяная скважина.</p>
+                    <p><span class="highlight">Конец XIX века</span> — Россия становится мировым лидером по добыче нефти.</p>
+                    <p>Баку превращается в крупнейший нефтяной центр.</p>
+                `;
+            }
+            else if (topic === 'industrialization') {
+                block.innerHTML = `
+                    <h3>ИНДУСТРИАЛИЗАЦИЯ</h3>
+                    <p><span class="highlight">1920 – 1940-е годы</span></p>
+                    <p>Советский период становится временем масштабной индустриализации нефтяной отрасли.</p>
+                    <p><span class="highlight">Ключевые события:</span></p>
+                    <p>• Создание крупных государственных предприятий</p>
+                    <p>• Активное развитие нефтепереработки</p>
+                    <p>• Строительство новых заводов и трубопроводов</p>
+                    <p><span class="highlight">Основные регионы:</span> Урал, Поволжье, Кавказ.</p>
+                    <p>Нефть становится основой для развития промышленности и обороноспособности страны.</p>
+                `;
+            }
+            else if (topic === 'breakthrough') {
+                block.innerHTML = `
+                    <h3>БОЛЬШОЙ РЫВОК</h3>
+                    <p><span class="highlight">1960 – 1980-е годы</span></p>
+                    <p>Открытие уникальных месторождений в Западной Сибири совершило революцию в нефтяной отрасли.</p>
+                    <p><span class="highlight">Ключевые события:</span></p>
+                    <p>• Открытие месторождения Самотлор (1965 год)</p>
+                    <p>• Освоение Сургута и Нижневартовска</p>
+                    <p>• Строительство мощных трубопроводов</p>
+                    <p>• Развитие нефтехимии</p>
+                    <p><span class="highlight">Результат:</span> Россия выходит на первое место в мире по добыче нефти.</p>
+                    <p>Самотлор, Сургут, Нижневартовск становятся символами нефтяного могущества СССР.</p>
+                `;
+            }
+            else if (topic === 'transformation') {
+                block.innerHTML = `
+                    <h3>ТРАНСФОРМАЦИЯ</h3>
+                    <p><span class="highlight">1990 – 2000-е годы</span></p>
+                    <p>Распад СССР и переход к рыночной экономике кардинально меняют структуру нефтяной отрасли.</p>
+                    <p><span class="highlight">Ключевые события:</span></p>
+                    <p>• Появление частных нефтяных компаний</p>
+                    <p>• Внедрение новых технологий</p>
+                    <p>• Интеграция в мировой рынок</p>
+                    <p>• Создание вертикально интегрированных компаний</p>
+                    <p><span class="highlight">Крупнейшие компании:</span> ЛУКОЙЛ, ЮКОС, Сургутнефтегаз.</p>
+                    <p>Начинается активное сотрудничество с зарубежными партнёрами.</p>
+                `;
+            }
+            else if (topic === 'modernity') {
+                block.innerHTML = `
+                    <h3>СОВРЕМЕННОСТЬ</h3>
+                    <p><span class="highlight">2010 – настоящее время</span></p>
+                    <p>Сегодня нефтегазовая отрасль России — это высокотехнологичный комплекс.</p>
+                    <p><span class="highlight">Ключевые направления:</span></p>
+                    <p>• Цифровые технологии и 3D-моделирование</p>
+                    <p>• Искусственный интеллект в добыче</p>
+                    <p>• Освоение шельфовых и арктических месторождений</p>
+                    <p>• Глубокая переработка нефти</p>
+                    <p>• Экологические программы</p>
+                    <p><span class="highlight">Экспорт:</span> Россия остаётся одним из лидеров по поставкам энергоресурсов в мире.</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>

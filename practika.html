@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив истории нефтегаза России</title>
+
+    <style>
+        /* Общие стили - на весь экран */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', CenturyGothic, sans-serif;
+            background-color: #1a3a5c;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* Главный блок - на весь экран */
+        .main-page {
+            background-color: #1a3a5c;
+			background-image: url('photo_2026-07-06_22-32-18.jpg');
+			background-size: cover;        
+			background-position: center;   
+			background-repeat: no-repeat;  
+			background-attachment: fixed;  
+            color: white;	
+            padding: 60px 40px;
+            text-align: center;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+			position: relative;
+        }
+
+        /* Заголовок */
+        .main-page h1 {
+            font-size: 42px;
+            margin: 0 0 10px 0;
+			background-color: rgba(0, 0, 0, 0.3); 
+			padding: 10px 25px;                    
+			border-radius: 30px;                  
+			display: inline-block;
+        }
+
+        /* Подзаголовок */
+        .main-page h2 {
+		font-size: 20px;
+		font-weight: normal;
+		color: #ffffff;
+		margin: 0 0 40px 0;
+		background-color: rgba(0, 0, 0, 0.4);
+		padding: 8px 25px;
+		border-radius: 30px;
+		display: inline-block;
+		text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+		border: 1px solid rgba(255, 255, 255, 0.15);
+}
+        }
+
+        /* Разделительная линия */
+        .divider {
+            border-top: 1px solid rgba(255,255,255,0.2);
+            margin: 30px auto;
+            width: 60%;
+        }
+
+        /* Контейнер для кнопок внизу */
+        .bottom-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .bottom-buttons button {
+            padding: 14px 35px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: rgba(255,255,255,0.15);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .bottom-buttons button:hover {
+            background-color: #d2b48c;
+            color: 7;
+            border-color: #000000;
+            transform: scale(1.05);
+        }
+
+        /* Контакты */
+        .contacts {
+            color: #cce0ff;
+            font-size: 14px;
+        }
+
+        .contacts .phone {
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .contacts p {
+            margin: 3px 0;
+        }
+		/* ЗАТЕМНЕНИЕ ПОВЕРХ КАРТИНКИ */
+.main-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.);
+    z-index: 0;
+}
+
+/* ВСЁ, ЧТО НА КАРТИНКЕ - ПОВЕРХ ЗАТЕМНЕНИЯ */
+.main-page h1,
+.main-page h2,
+.main-page .divider,
+.main-page .bottom-buttons,
+.main-page .contacts {
+    position: relative;
+    z-index: 1;
+}
+    </style>
+
+</head>
+<body>
+
+    
+    <div class="main-page">
+
+       
+        <h1>АРХИВ ИСТОРИИ РАЗВИТИЯ<br>НЕФТЕГАЗОВОЙ ОТРАСЛИ В РОССИИ</h1>
+
+        
+        <h2>ОТ ПЕРВЫХ СКВАЖИН ДО ГЛОБАЛЬНЫХ ПРОЕКТОВ</h2>
+
+        
+        <div class="divider"></div>
+
+        
+        <div class="bottom-buttons">
+            <button onclick="window.location.href='chronology.html'">ХРОНОЛОГИЯ</button>
+            <button onclick="window.location.href='geography.html'">ГЕОГРАФИЯ</button>
+            <button onclick="window.location.href='technology.html'">ТЕХНОЛОГИИ</button>
+           <button onclick="window.location.href='people.html'">ЛИЧНОСТИ</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

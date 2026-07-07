@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Технологии - Архив нефтегаза</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Century Gothic', CenturyGothic, sans-serif;
+            background-color: #1c0303;
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .page {
+            background-color: #1c0303;
+            background-image: url('photo_2026-07-06_22-32-18.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+            padding: 40px;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
+        .page > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px 30px;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            font-weight: normal;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 8px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            flex: 1;
+            align-items: flex-start;
+        }
+
+        .menu {
+            width: 220px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .menu button {
+            padding: 14px 20px;
+            font-size: 15px;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: left;
+            padding-left: 25px;
+        }
+
+        .menu button:hover {
+            background-color: #d2b48c;
+            color: #1c0303;
+            border-color: #000000;
+            transform: scale(1.03);
+        }
+
+        .content {
+            flex: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            min-height: 300px;
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #d2b48c;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #e0e8f0;
+        }
+
+        .content .highlight {
+            color: #d2b48c;
+            font-weight: bold;
+        }
+
+        .back-button {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .back-button a {
+            display: inline-block;
+            padding: 10px 30px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 30px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-button a:hover {
+            background-color: #d2b48c;
+            color: #1c0303;
+            border-color: #000000;
+            transform: scale(1.05);
+        }
+
+        .page {
+            animation: fadeInScale 0.8s ease;
+        }
+
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.95);
+                background-color: transparent;
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                background-color: #1a3a5c;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="page">
+
+        <div class="header">
+            <h1>ТЕХНОЛОГИИ</h1>
+            <h2>От геологоразведки до переработки: эволюция нефтегазовых технологий</h2>
+        </div>
+
+        <div class="container">
+
+            <div class="menu">
+                <button onclick="showTech('exploration')">ГЕОЛОГОРАЗВЕДКА</button>
+                <button onclick="showTech('drilling')">БУРЕНИЕ</button>
+                <button onclick="showTech('production')">ДОБЫЧА</button>
+                <button onclick="showTech('transport')">ТРАНСПОРТИРОВКА</button>
+                <button onclick="showTech('refining')">ПЕРЕРАБОТКА</button>
+            </div>
+
+            <div class="content" id="infoBlock">
+                <h3>ТЕХНОЛОГИЧЕСКАЯ ЭВОЛЮЦИЯ</h3>
+                <p>Выберите технологическое направление из меню слева, чтобы узнать подробности.</p>
+                <p style="color: #8899aa; font-style: italic; margin-top: 15px;">Здесь будет информация по выбранному направлению</p>
+            </div>
+
+        </div>
+
+        <div class="back-button">
+            <a href="practika.html">← НАЗАД НА ГЛАВНУЮ</a>
+        </div>
+
+    </div>
+
+    <script>
+        function showTech(topic) {
+            var block = document.getElementById('infoBlock');
+
+            if (topic === 'exploration') {
+                block.innerHTML = `
+                    <h3>ГЕОЛОГОРАЗВЕДКА</h3>
+                    <p><span class="highlight">Поиск и изучение месторождений</span></p>
+                    <p>Геологоразведка — первый и важнейший этап в нефтегазовой отрасли.</p>
+                    <p><span class="highlight">Этапы развития:</span></p>
+                    <p>• <strong>XIX век:</strong> визуальные методы, поиск по выходам нефти на поверхность</p>
+                    <p>• <strong>Начало XX века:</strong> структурное бурение, картографирование</p>
+                    <p>• <strong>Середина XX века:</strong> сейсморазведка, гравиметрические методы</p>
+                    <p>• <strong>Современность:</strong> 3D-сейсмика, цифровое моделирование, искусственный интеллект</p>
+                    <p><span class="highlight">Результат:</span> точность поиска месторождений выросла в сотни раз.</p>
+                `;
+            }
+            else if (topic === 'drilling') {
+                block.innerHTML = `
+                    <h3>БУРЕНИЕ</h3>
+                    <p><span class="highlight">Создание скважин для добычи</span></p>
+                    <p>Бурение — ключевая технология доступа к нефтяным и газовым пластам.</p>
+                    <p><span class="highlight">Эволюция технологий:</span></p>
+                    <p>• <strong>Ручное бурение:</strong> первые скважины XIX века</p>
+                    <p>• <strong>Роторное бурение:</strong> механизация процесса</p>
+                    <p>• <strong>Турбинное бурение:</strong> советская разработка для глубоких скважин</p>
+                    <p>• <strong>Наклонно-направленное бурение:</strong> доступ к удалённым пластам</p>
+                    <p>• <strong>Горизонтальное бурение:</strong> современные технологии для сложных месторождений</p>
+                    <p><span class="highlight">Рекорды:</span> глубина скважин достигает 12 000 метров.</p>
+                `;
+            }
+            else if (topic === 'production') {
+                block.innerHTML = `
+                    <h3>ДОБЫЧА</h3>
+                    <p><span class="highlight">Извлечение углеводородов на поверхность</span></p>
+                    <p>Методы добычи зависят от типа месторождения и свойств пласта.</p>
+                    <p><span class="highlight">Основные методы:</span></p>
+                    <p>• <strong>Фонтанный способ:</strong> нефть бьёт под давлением пласта</p>
+                    <p>• <strong>Насосная добыча:</strong> для низкопроницаемых пластов</p>
+                    <p>• <strong>Газлифтный способ:</strong> закачка газа для подъёма нефти</p>
+                    <p>• <strong>Повышение нефтеотдачи:</strong> закачка воды, пара, химических реагентов</p>
+                    <p>• <strong>Добыча на шельфе:</strong> морские платформы и подводные технологии</p>
+                    <p><span class="highlight">Современный вызов:</span> увеличение коэффициента извлечения трудноизвлекаемых запасов.</p>
+                `;
+            }
+            else if (topic === 'transport') {
+                block.innerHTML = `
+                    <h3>ТРАНСПОРТИРОВКА</h3>
+                    <p><span class="highlight">Доставка от месторождения до потребителя</span></p>
+                    <p>Эффективная транспортировка — залог экономики отрасли.</p>
+                    <p><span class="highlight">Виды транспорта:</span></p>
+                    <p>• <strong>Трубопроводы:</strong> самый экономичный и надёжный способ</p>
+                    <p>  - Нефтепроводы: «Дружба», Восточный нефтепровод</p>
+                    <p>  - Газопроводы: «Сияние Севера», «Ямал-Европа», «Северный поток»</p>
+                    <p>• <strong>Танкерный флот:</strong> для экспорта морским путём</p>
+                    <p>• <strong>Железнодорожные цистерны:</strong> для малых объёмов</p>
+                    <p>• <strong>Автоцистерны:</strong> для доставки в удалённые районы</p>
+                    <p><span class="highlight">Развитие:</span> строительство новых мощных трубопроводов в Китай и Азию.</p>
+                `;
+            }
+            else if (topic === 'refining') {
+                block.innerHTML = `
+                    <h3>ПЕРЕРАБОТКА</h3>
+                    <p><span class="highlight">Превращение нефти в ценные продукты</span></p>
+                    <p>Нефтепереработка даёт тысячи видов продукции — от топлива до пластиков.</p>
+                    <p><span class="highlight">Основные процессы:</span></p>
+                    <p>• <strong>Перегонка (дистилляция):</strong> разделение на фракции</p>
+                    <p>• <strong>Крекинг:</strong> расщепление тяжёлых молекул</p>
+                    <p>• <strong>Риформинг:</strong> повышение октанового числа бензина</p>
+                    <p>• <strong>Гидроочистка:</strong> удаление серы и примесей</p>
+                    <p><span class="highlight">Крупнейшие НПЗ России:</span></p>
+                    <p>• Омский НПЗ — крупнейший в стране</p>
+                    <p>• Нижнекамский НПЗ</p>
+                    <p>• Киришский НПЗ</p>
+                    <p><span class="highlight">Современные тенденции:</span> глубокая переработка, экологические стандарты.</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
