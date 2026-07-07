@@ -184,6 +184,114 @@
                 background-color: #1a3a5c;
             }
         }
+		/* ========== АДАПТАЦИЯ ПОД ТЕЛЕФОН ========== */
+
+@media (max-width: 768px) {
+    .page {
+        padding: 15px 10px !important;
+    }
+
+    .header h1 {
+        font-size: 20px !important;
+        padding: 6px 15px !important;
+    }
+
+    .header h2 {
+        font-size: 12px !important;
+        padding: 5px 12px !important;
+    }
+
+    .container {
+        flex-direction: column !important;
+        gap: 15px !important;
+    }
+
+    .menu {
+        width: 100% !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+    }
+
+    .menu button {
+        flex: 0 1 auto !important;
+        min-width: 80px !important;
+        max-width: 140px !important;
+        text-align: center !important;
+        padding: 10px 15px !important;
+        font-size: 12px !important;
+        justify-content: center !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .content {
+        padding: 15px !important;
+        min-height: 150px !important;
+        width: 100% !important;
+    }
+
+    .content h3 {
+        font-size: 18px !important;
+    }
+
+    .content p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+    }
+
+    .back-button {
+        margin-top: 15px !important;
+    }
+
+    .back-button a {
+        font-size: 12px !important;
+        padding: 8px 20px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .page {
+        padding: 10px 8px !important;
+    }
+
+    .header h1 {
+        font-size: 16px !important;
+        padding: 5px 10px !important;
+    }
+
+    .header h2 {
+        font-size: 10px !important;
+        padding: 4px 10px !important;
+        margin-top: 5px !important;
+    }
+
+    .menu button {
+        min-width: 65px !important;
+        max-width: 110px !important;
+        font-size: 10px !important;
+        padding: 8px 10px !important;
+    }
+
+    .content h3 {
+        font-size: 15px !important;
+    }
+
+    .content p {
+        font-size: 12px !important;
+    }
+
+    .content {
+        padding: 12px !important;
+        min-height: 120px !important;
+    }
+
+    .back-button a {
+        font-size: 10px !important;
+        padding: 6px 15px !important;
+    }
+}
     </style>
 
 </head>
